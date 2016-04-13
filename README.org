@@ -32,5 +32,10 @@ We propose to gather in this open source project an open source library of imple
 1. facilitate the comparison of new implementations of such deferred data structures with existing ones, and to
 2. facilitate the use of those data structures in other projects, whether for research or for practical purpose.
 
+For those purpose, the project is divided in two parts, one relevant to the implementation of deferred data structures for multisets, and one relevant to their evaluation:
 
+** Implementations of Deferred Data Structures for Multisets
+*** file:greedyImplementation.py
+The project is initiated with a greedy implementation in Python of the fonctionalities of a deferred data structure, which can be used as a reference for checking the correction of more sophisticated implementations.
+** Scripts to evaluate and compare the performance of Deferred Data Structures
 
