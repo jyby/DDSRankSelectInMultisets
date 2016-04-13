@@ -1,4 +1,4 @@
-#+TITLE: DDSRankSelectInMultisets
+#+TITLE: Deferred Data Structures supporting Rank, Select in MultiSets
 #+DESCRIPTION: Implementations and Experimentations on Deferred Data Structures supporting Rank, Select in MultiSets
 #+AUTHOR: Jérémy Barbay
 #+EMAIL: jeremy@barbay.cl
@@ -25,7 +25,6 @@ For the external memory model, they described the first online multiselection al
 It is not clear whether Karp et al. [JC 1988] nor Ching et a. [IPL 1990] implemented the defferred data structure that they described. [CHECK Kurt Mehlhorn's webpage for available code?]
 
 Barbay et al. [ESA 2013] experimental results comparing online and offline algorithms. Their experimental results show that their online algorithms require fewer comparisons than the best-known offline algorithms. Interestingly, their experiments suggest that the optimal online algorithm (when used to sort the array) requires fewer comparisons than both quicksort and mergesort.  They implemented randomized variants in C and in java, but did not distribute their code.
-
 * Proposal
 
 We propose to gather in this open source project an open source library of implementations of Deferred Data Structures for Multisets, in order to
@@ -38,4 +37,16 @@ For those purpose, the project is divided in two parts, one relevant to the impl
 *** file:greedyImplementation.py
 The project is initiated with a greedy implementation in Python of the fonctionalities of a deferred data structure, which can be used as a reference for checking the correction of more sophisticated implementations.
 ** Scripts to evaluate and compare the performance of Deferred Data Structures
+
+* List of methods
+  Each Deferred Data Structure implementation must implement the class =PartiallySortedArray=, which the following methods:
+
+    1. [ ] =__init__(A)= which receives as input an array of comparable values (e.g. integers), and return the corresponding deferred data structure.
+    2. [ ] =__len__()= which returns the number of elements in the Partially Sorted Array.
+    3. [ ] =select(r)= which returns the element of the set such that r elements are smaller.
+    4. [ ] =rank(x)= which returns the number of elements in the set which are smaller than x.
+    5. [ ] =rankRight(x)= which returns the number of elements in the set which are smaller than or equal to x.
+    6. [ ] =totalNbOfQueriesPerformed()=, which returns the total number of queries performed on the Partially Sorted Array.
+
+  The file [[file:Implementations/greedyImplementation.py][file:Implementations/greedyImplementation.py]] is a good example of a greedy implementation in python of a deferred data structure supporting those methods.
 
