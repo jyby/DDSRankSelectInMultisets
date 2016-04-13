@@ -1,0 +1,36 @@
+#+TITLE: DDSRankSelectInMultisets
+#+DESCRIPTION: Implementations and Experimentations on Deferred Data Structures supporting Rank, Select in MultiSets
+#+AUTHOR: Jérémy Barbay
+#+EMAIL: jeremy@barbay.cl
+#+CATEGORY: Research
+
+* Introduction
+** Theory
+*** Static Content
+
+Given a \textsc{Multiset} $W[1..n]$ on alphabet $[1..\sigma]$ of size $n$, Karp et al. [SJC 1988] defined the first deferred data structure supporting for all $x\in[1..\sigma]$ and $r\in[1..n]$ queries such as \texttt{rank}$(x)$, the number of elements which are strictly smaller than $x$ in $W$; and \texttt{select}$(r)$, the value of the $r$-th smallest value (counted with multiplicity) in $W$.  Their data structure supports $q$ queries in time within $O(n(1+\lg q)+q\lg n)$, all in the comparison model, which is the minimum amount of work in the worst case over instances of multiset size $n$ and query number $q$ fixed (i.e. the query size). 
+
+Barbay et al. [ESA 2013] refined this approach to take advantage of the gaps between the positions hit by the queries (i.e. the structure of the queries).  Their data structure is simpler (a single binary array) and their analysis is finer, taking into account the gaps between the position hit by the queries.
+
+*** Dynamic content
+
+Barbay et al. (WALCOM 2014) extended those results to the dynamic version of the \emph{online multiselection} problem for internal and external memory, in which~$q$ selection queries are requested on an unsorted array of $N$~elements. Their internal memory result is $1$-competitive with the offline result of Kaligosi et al.  [ICALP 2005].  In particular, they extend the results of Barbary et al.  [ESA 2013] by supporting arbitrary \emph{insertions} and \emph{deletions} while supporting online \emph{select} and \emph{search} queries on the array. Assuming that the insertion of an element is immediately preceded by a search for that element, they showed that their dynamic online algorithm performs an optimal number of comparisons, up to lower order terms and an additive~$O(N)$ term.
+
+*** In External Memory
+
+For the external memory model, they described the first online multiselection algorithm that is $O(1)$-competitive, and showed how to support searches, insertions, and deletions of elements efficiently.  This result improves upon the work of Sibeyn [JoA 2006] when $q > m$, where $m$ is the number of blocks that can be stored in main memory.
+
+** Experimentations
+
+It is not clear whether Karp et al. [JC 1988] nor Ching et a. [IPL 1990] implemented the defferred data structure that they described. [CHECK Kurt Mehlhorn's webpage for available code?]
+
+Barbay et al. [ESA 2013] experimental results comparing online and offline algorithms. Their experimental results show that their online algorithms require fewer comparisons than the best-known offline algorithms. Interestingly, their experiments suggest that the optimal online algorithm (when used to sort the array) requires fewer comparisons than both quicksort and mergesort.  They implemented randomized variants in C and in java, but did not distribute their code.
+
+* Proposal
+
+We propose to gather in this open source project an open source library of implementations of Deferred Data Structures for Multisets, in order to
+1. facilitate the comparison of new implementations of such deferred data structures with existing ones, and to
+2. facilitate the use of those data structures in other projects, whether for research or for practical purpose.
+
+
+
