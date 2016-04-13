@@ -33,10 +33,12 @@ We propose to gather in this open source project an open source library of imple
 
 For those purpose, the project is divided in two parts, one relevant to the implementation of deferred data structures for multisets, and one relevant to their evaluation:
 
-** Implementations of Deferred Data Structures for Multisets
-*** file:greedyImplementation.py
-The project is initiated with a greedy implementation in Python of the fonctionalities of a deferred data structure, which can be used as a reference for checking the correction of more sophisticated implementations.
-** Scripts to evaluate and compare the performance of Deferred Data Structures
+** Implementations 
+A folder containing various implementations of Deferred Data Structures for Multisets.
+The project is initiated with a greedy implementation in Python in file:greedyImplementation.py of the fonctionalities of a deferred data structure, which can be used as a reference for checking the correction of more sophisticated implementations. Other implementations will be added there.
+** Evaluation
+A folder containing various scripts, programs and data for the evaluation and comparison of the performance of Deferred Data Structures
+
 
 * List of methods
   Each Deferred Data Structure implementation must implement the class =PartiallySortedArray=, which the following methods:
