@@ -34,8 +34,15 @@ We propose to gather in this open source project an open source library of imple
 For those purpose, the project is divided in two parts, one relevant to the implementation of deferred data structures for multisets, and one relevant to their evaluation:
 
 ** Implementations 
-A folder containing various implementations of Deferred Data Structures for Multisets.
-The project is initiated with a greedy implementation in Python in file:greedyImplementation.py of the fonctionalities of a deferred data structure, which can be used as a reference for checking the correction of more sophisticated implementations. Other implementations will be added there.
+The folder [[file:Implementations][file:Implementations]] contains various implementations of Deferred Data Structures for Multisets, in [[file:Implementations/C/][C]], [[file:Implementations/Java][Java]] and [[file:Implementations/Python][python]].
+
+*** Greedy Implementation in Python
+The project is initiated with a greedy implementation in Python in [[file:Implementations/Python/greedyImplementation.py][file:Implementations/Python/greedyImplementation.py]] of the fonctionalities of a deferred data structure, which can be used as a reference for checking the correction of more sophisticated implementations. 
+*** Pivot Array based implementation in Python
+*** Pivot Array based implementation in C
+*** Pivot Array based implementation in Java
+
+
 ** Evaluation
 A folder containing various scripts, programs and data for the evaluation and comparison of the performance of Deferred Data Structures
 
@@ -50,5 +57,5 @@ A folder containing various scripts, programs and data for the evaluation and co
     5. [ ] =rankRight(x)= which returns the number of elements in the set which are smaller than or equal to x.
     6. [ ] =totalNbOfQueriesPerformed()=, which returns the total number of queries performed on the Partially Sorted Array.
 
-  The file [[file:Implementations/greedyImplementation.py][file:Implementations/greedyImplementation.py]] is a good example of a greedy implementation in python of a deferred data structure supporting those methods.
+  The file [[file:Implementations/Python/greedyImplementation.py][file:Implementations/Python/greedyImplementation.py]] is a good example of a greedy implementation in python of a deferred data structure supporting those methods.
 
